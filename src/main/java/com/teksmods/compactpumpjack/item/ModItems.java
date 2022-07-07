@@ -13,7 +13,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CompactPumpjack.MOD_ID);
 
     public static final RegistryObject<Item> CPJTEST = ITEMS.register("cpjtest",
-            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+            () -> new Item(new Item.Properties().group(ModItemGroup.CPJ_GROUP)));
     public static final RegistryObject<Item> CPJCREATIVETAB = ITEMS.register("cpjcreativetab",() -> new Item(new Item.Properties()));
 
 

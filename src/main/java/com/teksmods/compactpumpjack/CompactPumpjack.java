@@ -1,5 +1,6 @@
 package com.teksmods.compactpumpjack;
 
+import com.teksmods.compactpumpjack.block.ModBlocks;
 import com.teksmods.compactpumpjack.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -33,6 +34,7 @@ public class CompactPumpjack
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

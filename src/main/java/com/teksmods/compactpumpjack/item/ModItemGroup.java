@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 
 public class ModItemGroup {
 
-    public static final ItemGroup CPJ_GROUP = new ItemGroup("CPJ: Compact Pumpjack") {
+    public static final ItemGroup CPJ_GROUP = new ItemGroup("cpjModTab") {
         @Override
         public ItemStack createIcon()
         {
