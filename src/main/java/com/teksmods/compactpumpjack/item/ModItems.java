@@ -14,6 +14,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> CPJTEST = ITEMS.register("cpjtest",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> CPJCREATIVETAB = ITEMS.register("cpjcreativetab",() -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
