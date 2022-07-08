@@ -1,9 +1,13 @@
 package com.teksmods.compactpumpjack;
 
 import com.teksmods.compactpumpjack.block.ModBlocks;
+import com.teksmods.compactpumpjack.inventory.container.ModContainers;
 import com.teksmods.compactpumpjack.item.ModItems;
+import com.teksmods.compactpumpjack.screen.CompactPumpjackScreen;
+import com.teksmods.compactpumpjack.tileentity.ModTileEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +39,8 @@ public class CompactPumpjack
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModTileEntities.register(eventBus);
+        ModContainers.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -57,6 +63,8 @@ public class CompactPumpjack
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client;
+        ScreenManager.registerFactory(ModContainers.COMPACT_PUMPJACK_CONTAINER.get(),
+                CompactPumpjackScreen::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

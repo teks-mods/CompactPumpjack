@@ -1,5 +1,7 @@
 {
   "item.compactpumpjack.cpjtest": "Test Item",
   "itemGroup.cpjModTab": "CPJ: Compact Pumpjack",
-  "block.compactpumpjack.cpjtestblock": "CPJ Test Block"
+  "block.compactpumpjack.cpjtestblock": "Compact Pumpjack Machine",
+  "block.compactpumpjack.compact_pumpjack": "CPJ",
+  "screen.compactpumpjack.compact_pumpjack": "Compact Pumpjack GUI Test"
 }
