@@ -38,6 +38,7 @@ public class CompactPumpjackScreen extends ContainerScreen<CompactPumpjackContai
         if(container.isLightningStorm()) {
             this.blit(matrixStack, i + 82, j + 9, 176,0,13,17);
             ITextComponent msg = ITextComponent.getTextComponentOrEmpty("Lightning Storm Detected.");
+            
             Minecraft.getInstance().player.sendMessage(msg, Util.DUMMY_UUID);
         }
 

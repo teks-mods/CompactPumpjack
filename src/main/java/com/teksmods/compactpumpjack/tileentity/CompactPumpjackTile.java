@@ -12,6 +12,9 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
@@ -21,6 +24,8 @@ import javax.annotation.Nullable;
 
 public class CompactPumpjackTile extends TileEntity {
 
+    private final IFluidHandler generalHandler = new SidedFluidHandler(null, this);
+    private final LazyOptional<IFluidHandler>  = LazyOptional.of(() -> IFluidHandler)
     private final ItemStackHandler itemHandler = createHandler();
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
 

@@ -46,6 +46,8 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             // Recommended logging data for a userdev environment
             // The markers can be changed as needed.
@@ -139,7 +141,11 @@ dependencies {
     //api fg.deobf("curse.maven:ie-231951:3809596-api")
     implementation fg.deobf("curse.maven:ie-231951:3809596")
     //api fg.deobf("curse.maven:ip-268250:3608210-api")
-    //implementation fg.deobf("curse.maven:ip-268250:3608210")
+    implementation fg.deobf("curse.maven:ip-268250:3608210")
+    // Core Lib
+    implementation fg.deobf("curse.maven:supermartijn642s-core-lib-454372:3773950")
+    // Config Lib
+    implementation fg.deobf("curse.maven:supermartijn642s-config-lib-438332:3840231")
 
 
 
