@@ -3,5 +3,7 @@
   "itemGroup.cpjModTab": "CPJ: Compact Pumpjack",
   "block.compactpumpjack.cpjtestblock": "Compact Pumpjack Machine",
   "block.compactpumpjack.compact_pumpjack": "CPJ",
-  "screen.compactpumpjack.compact_pumpjack": "Compact Pumpjack GUI Test"
+  "screen.compactpumpjack.compact_pumpjack": "Compact Pumpjack GUI Test",
+  "item.compactpumpjack.ph2o_bucket": "Prevaporized Dihydrogen Monoxide Bucket",
+  "fluid.compactpumpjack.ph2o": "Prevaporized Dihydrogen Monoxide"
 }

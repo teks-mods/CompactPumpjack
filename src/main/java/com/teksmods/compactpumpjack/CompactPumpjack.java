@@ -1,6 +1,7 @@
 package com.teksmods.compactpumpjack;
 
 import com.teksmods.compactpumpjack.block.ModBlocks;
+import com.teksmods.compactpumpjack.fluid.ModFluids;
 import com.teksmods.compactpumpjack.inventory.container.ModContainers;
 import com.teksmods.compactpumpjack.item.ModItems;
 import com.teksmods.compactpumpjack.screen.CompactPumpjackScreen;
@@ -8,6 +9,8 @@ import com.teksmods.compactpumpjack.tileentity.ModTileEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -41,6 +44,7 @@ public class CompactPumpjack
         ModBlocks.register(eventBus);
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
+        ModFluids.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -65,6 +69,12 @@ public class CompactPumpjack
         // do something that can only be done on the client;
         ScreenManager.registerFactory(ModContainers.COMPACT_PUMPJACK_CONTAINER.get(),
                 CompactPumpjackScreen::new);
+
+        event.enqueueWork(() -> {
+            RenderTypeLookup.setRenderLayer(ModFluids.EXPLOSIVEWATER_FLUID.get(), RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(ModFluids.PH2O_BLOCK.get(), RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(ModFluids.EXPLOSIVEWATER_FLOWING.get(), RenderType.getTranslucent());
+        });
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
